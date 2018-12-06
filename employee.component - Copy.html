@@ -1,0 +1,31 @@
+
+<p>{{ arraylist}}</p>
+<ol>
+  <li *ngFor="let empl of empnames">
+   {{empl}}
+  </li>
+</ol>
+<p>
+table 
+</p>
+<
+
+<button (click)="buttonClick()">Click me</button>
+<table *ngIf="condition">
+    <tr>
+        <th> id </th>
+        <th> firstName </th>
+        <th> lastName </th>
+		<th> salary </th>
+        <th> department </th>
+		<th> doj </th>
+    </tr>
+    
+    <tr *ngFor="let emp of employees">
+        <td [innerHTML] = "emp.id"></td>
+        <td>{{ emp.firstName | lowercase }}</td>
+        <td>{{ emp.lastName | uppercase}}</td>
+		<td>{{emp.salary |inhandsalary | currency : 'INR' : true}}</td>
+        <td>{{ emp.department }}</td>
+		<td>{{emp.doj | date : "dd/MMM/yyyy"}}</td>
+    </tr>
